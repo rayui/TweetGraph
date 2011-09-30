@@ -1,12 +1,29 @@
-<doctype html>
+<!doctype html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Tweet Graph</title>
 	<meta name="description" content="">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/processing.js"></script>
+	<script src="js/jsOAuth-1.3.1.js"></script>
 </head>
 <body>
-<script src="js/processing.js"></script>
+	<script>
+		var config = {
+			consumerKey: 'sHauTttyGZMCdNHWReKbqQ',
+			consumerSecret: 'R8hk5ZNvd5Kv3eLvwzX1UPv3Lb9a4Zf2q6dKc7WD8Q',
+			accessTokenKey: '19388885-n05mwGkneTEPbTQp1i6fn6DevEGK5btATgZNkWX6w',
+			accessTokenSecret: '0pwd7VRRbFOK7061tPpShD7Z1ppZvLaqJHh6E7cico'
+		}
+		var oauth = OAuth(config);
+		function success(data) {
+			alert('Success ' + data.text);
+		}
+		function failure(data) {
+			alert('Something bad happened! :(');
+		}
+		oauth.get('https://api.twitter.com/oauth/authorize', success, failure);
+	</script>
 </body>
 </html>
