@@ -4,8 +4,8 @@ var oauth = require('oauth');
 
 var app = express.createServer();
 
-var _twitterConsumerKey = "YOURTWITTERCONSUMERKEY";
-var _twitterConsumerSecret = "YOURTWITTERCONSUMERSECRET";
+var _twitterConsumerKey = "sHauTttyGZMCdNHWReKbqQ";
+var _twitterConsumerSecret = "R8hk5ZNvd5Kv3eLvwzX1UPv3Lb9a4Zf2q6dKc7WD8Q";
 
 function consumer() {
   return new oauth.OAuth(
@@ -17,9 +17,8 @@ app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   app.use(express.logger());
   app.use(express.cookieParser());
-    app.use(express.cookieParser());
-    app.use(express.session({
-      secret:_twitterConsumerSecret
+  app.use(express.session({
+  	secret:'0pwd7VRRbFOK7061tPpShD7Z1ppZvLaqJHh6E7cico'
   }));
 });
 
